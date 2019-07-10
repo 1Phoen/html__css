@@ -6,12 +6,7 @@
     --title-color: #4E5665;
 }
 
-@media screen and (max-width: 600px) {
-    html {
-        margin-top: calc(100vh - 20px);
-        margin-bottom: 0;
-    }
-}
+
 
 body {
     margin: 0;
@@ -38,7 +33,8 @@ h3 {
 
 /* Container */
 .container {
-    width: 970px;
+    width: 100%;
+    max-width: 970px;
     margin: 0 auto;
 
     text-align: center;
@@ -61,38 +57,28 @@ hr {
     opacity: 0.5;
 }
 
-/* Header */
-.header {
-    position: relative;
-
+/* Intro */
+.intro__inner {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
 
+    width: 100%;
+    height: 100vh;
     background: url("../images/header/intro.png") center center no-repeat;
     background-size: cover;
 }
 
-.header__inner {
-    width: 970px;
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-.header__title {
+.intro__title {
     font-size: 200px;
     line-height: 227px;
-    font-weight: 700;
+
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     color: var(--header-color);
 }
 
-.header__subTitle {
-    margin-top: 220px;
-
+.intro__subTitle {
     font-size: 24px;
     font-weight: 400;
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
@@ -112,6 +98,8 @@ hr {
 .nav__inner {
     display: flex;
     justify-content: space-around;
+
+
 }
 
 .nav {
@@ -161,18 +149,6 @@ hr {
 
 .nav__link.active {
     color: var(--title-color);
-}
-
-@media all and (max-width: 880px) {
-
-
-    .nav__inner {
-        flex-wrap: wrap;
-    }
-
-    .nav__inner > nav {
-        flex-basis: 50%;
-    }
 }
 
 /* Section */
@@ -230,67 +206,52 @@ hr {
 /* History */
 .history {
     display: flex;
-    height: 430px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 430px;
 
     background: url("../images/content/hh.png") top right no-repeat;
 }
 
 .history__item {
-    position: relative;
-    top: 35px;
-    left: -40px;
+    max-width: 470px;
+    max-height: 290px;
+    padding: 40px;
+
+    text-align: left;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+
+    background: var(--header-color);
 }
 
 .history__title {
-    position: absolute;
-    top: 70px;
-    left: 80px;
-
     font-size: 24px;
     font-weight: 400;
+
     color: var(--title-color);
-}
-
-.history__text {
-    position: absolute;
-    top: 100px;
-    left: 80px;
-
-    width: 390px;
-    text-align: left;
 }
 
 /* Beach */
 .beach {
     display: flex;
-    height: 430px;
     justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    min-height: 430px;
+
     background: url("../images/content/Beach.png") top left no-repeat;
 }
 
 .beach__item {
-    position: relative;
-    top: 35px;
-    left: 80px;
-}
+    max-width: 470px;
+    max-height: 290px;
+    padding: 40px;
 
-.beach__title {
-    position: absolute;
-    top: 70px;
-    left: 80px;
-
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--title-color);
-}
-
-.beach__text {
-    position: absolute;
-    top: 100px;
-    left: 80px;
-
-    width: 390px;
     text-align: left;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+
+    background: var(--header-color);
 }
 
 /* Cadillac */
@@ -426,4 +387,78 @@ hr {
     color: #333;
 
     border-top: 1px solid #d0d4d8;
+}
+
+@media (max-width: 770px) {
+
+    /* Intro */
+    .intro__title {
+        font-size: 160px;
+    }
+
+    .intro__subTitle {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 570px) {
+
+    /* Intro */
+    .intro {
+        min-height: 350px;
+    }
+
+    /* Nav */
+    .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 10px;
+        padding: 5px 10px;
+    }
+
+    /* Section */
+    .section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Intro */
+    .intro__title {
+        font-size: 40px;
+    }
+
+    .intro__subTitle {
+        font-size: 18px;
+    }
+
+    /* Section */
+    .section__header {
+        margin-bottom: 40px;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
+
+    .section__subTitle {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .section__title:after {
+        margin: 20px auto;
+    }
 }
